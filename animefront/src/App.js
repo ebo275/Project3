@@ -1,6 +1,8 @@
 import './App.css';
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import Show from './components/show.js'
+import Add from './components/Add.js'
 
 const App = ()=> {
 
@@ -24,6 +26,7 @@ const App = ()=> {
   return (
     <>
     <h1>Anime Wonderland</h1>
+    <Add handleCreate={handleCreate}/>
     {shows.map((show) => {
         return (
           <>
