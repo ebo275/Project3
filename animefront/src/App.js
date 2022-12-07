@@ -1,24 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState, useEffect} from 'react'
+import axios from 'axios'
 
-function App() {
+const App = ()=> {
+
+  const [shows, setShows] = useState([])
+  
+  const getShows = () => {
+    axios.get('http://localhost:300/shows').then((response) => setShows(response.data), (err) => console.log(err)).catch((error)=> console.log(error))
+  }
+
+  const handleCreate = (data) => {
+    axios.post('http://localhost:300/shows', data).then((response) => {
+      console.log(response)
+      setShows([...shows, response.data])
+    })
+  }
+
+  useEffect(() => {
+    getShows()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <h1>Anime Wonderland</h1>
+    {shows.map((show) => {
+        return (
+          <>
+            <Show show={show}/>
+          </>
+        )})}
+    </>
   );
 }
 
