@@ -10,7 +10,7 @@ const Add = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        PaymentResponse.handleCreate(person)
+        props.handleCreate(person)
     }
     
     return (
