@@ -5,7 +5,7 @@ const Add = () => {
     const [anime, setAnimes] = useState({image: "", title:"", genre: "", studio: "", seasons: 0, episodes: 0, releaseDate: ""})
 
     const handleChange = (event) => {
-        setAnime({...show, [event.target.name]: event.target.value})
+        setAnime({...anime, [event.target.name]: event.target.value})
     }
 
     const handleSubmit = (event) => {

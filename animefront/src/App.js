@@ -21,7 +21,7 @@ const App = ()=> {
 
     axios.post('http://localhost:3000/animes', data).then((response) => {
       console.log(response)
-      setShows([...animes, response.data])
+      setAnimes([...animes, response.data])
 
     })
   }
@@ -40,11 +40,11 @@ const handleEdit = (data) => {
 
   //DELETE
 const handleDelete = (deletedAnime) => {
-  axios.delete('http://localhost:3000/shows/' + deletedAnime._id).then((response) => {
+  axios.delete('http://localhost:3000/animes/' + deletedAnime._id).then((response) => {
     let newAnimes = animes.filter((anime) => {
       return anime._id !== deletedAnime._id
     })
-    setShows(newAnimes)
+    setAnimes(newAnimes)
   })
 }
 

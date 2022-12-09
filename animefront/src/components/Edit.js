@@ -43,7 +43,7 @@ const Edit = (props) => {
             <br/>
             <br/>
             <lable htmlFor="releasedate">Release Date:</lable>
-            <input type= "number" name="release" onChange={handleChange} value={anime.release}/>
+            <input type= "text" name="release" onChange={handleChange} value={anime.release}/>
             <input type="submit"/>
         </form>
         </details>
