@@ -10,7 +10,11 @@ const Add = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        props.handleCreate()
+
+        props.handleCreate(anime)
+
+      
+
     }
     
     return (
