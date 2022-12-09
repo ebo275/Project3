@@ -13,6 +13,24 @@ const Edit = (props) => {
         props.handleCreate(anime)
     }
 
-    
+    return(
+        <>
+        <details>
+            <summary>Edit Anime</summary>
+        <form onSubmit={handleSubmit}>
+            <lable htmlFor="name">Name:</lable>
+            <input type="text" name="name" onChange={handleChange} value={person.name}/>
+            <br/>
+            <br/>
+            <lable htmlFor="age">Age:</lable>
+            <input type= "number" name="age" onChange={handleChange} value={person.age}/>
+            <input type="submit"/>
+        </form>
+        </details>
+        
+        
+        </>
+
+    )
 
 }
