@@ -18,12 +18,32 @@ const Edit = (props) => {
         <details>
             <summary>Edit Anime</summary>
         <form onSubmit={handleSubmit}>
+        <lable htmlFor="image">Image:</lable>
+            <input type="text" name="image" onChange={handleChange} value={anime.image}/>
+            <br/>
+            <br/>
             <lable htmlFor="name">Name:</lable>
-            <input type="text" name="name" onChange={handleChange} value={person.name}/>
+            <input type="text" name="name" onChange={handleChange} value={anime.name}/>
             <br/>
             <br/>
-            <lable htmlFor="age">Age:</lable>
-            <input type= "number" name="age" onChange={handleChange} value={person.age}/>
+            <lable htmlFor="genre">Genere:</lable>
+            <input type="text" name="genre" onChange={handleChange} value={anime.genre}/>
+            <br/>
+            <br/>
+            <lable htmlFor="seasons">Seasons:</lable>
+            <input type="number" name="seasons" onChange={handleChange} value={anime.seasons}/>
+            <br/>
+            <br/>
+            <lable htmlFor="episodes">Episodes:</lable>
+            <input type="number" name="episodes" onChange={handleChange} value={anime.episodes}/>
+            <br/>
+            <br/>
+            <lable htmlFor="studio">Studio:</lable>
+            <input type="text" name="studio" onChange={handleChange} value={anime.studio}/>
+            <br/>
+            <br/>
+            <lable htmlFor="releasedate">Release Date:</lable>
+            <input type= "number" name="release" onChange={handleChange} value={anime.release}/>
             <input type="submit"/>
         </form>
         </details>
@@ -34,3 +54,5 @@ const Edit = (props) => {
     )
 
 }
+
+export default Edit
