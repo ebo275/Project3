@@ -2,15 +2,19 @@ import { useState } from "react";
 
 const Add = () => {
 
-    const [show, setShow] = useState({image: "", title:"", seasons: 0, episodes: 0, releaseDate: ""})
+    const [anime, setAnimes] = useState({image: "", title:"", genre: "", studio: "", seasons: 0, episodes: 0, releaseDate: ""})
 
     const handleChange = (event) => {
-        setShow({...show, [event.target.name]: event.target.value})
+        setAnime({...show, [event.target.name]: event.target.value})
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        props.handleCreate(person)
+
+        props.handleCreate(anime)
+
+      
+
     }
     
     return (
@@ -24,6 +28,14 @@ const Add = () => {
             <input type="text" name="name" onChange={handleChange}/>
             <br/>
             <br/>
+            <lable htmlFor="genre">Genre:</lable>
+            <input type="text" name="genre" onChange={handleChange}/>
+            <br/>
+            <br/>
+            <lable htmlFor="studio">Studio:</lable>
+            <input type="text" name="studio" onChange={handleChange}/>
+            <br/>
+            <br/>
             <lable htmlFor="seasons">Number of Seasons:</lable>
             <input type= "number" name="seasons" onChange={handleChange}/>
             <lable htmlFor="episodes">Number of Episodes:</lable>
@@ -31,7 +43,7 @@ const Add = () => {
             <br/>
             <br/>
             <lable htmlFor="releaseDate">Release Date:</lable>
-            <input type="text" name="releaseDate" onChange={handleChange}/>
+            <input type="text" name="release" onChange={handleChange}/>
             <br/>
             <br/>
             <input type="submit"/>
