@@ -2,12 +2,12 @@ body {
   background-color: brown;
 }
 .card {
-  width: 40vw;
+  width: 50vw;
   display: flex;
-  /* flex-direction: row; */
+  flex-direction: column; 
   flex-wrap: wrap;
   margin: 5vw;
-}
+} 
 
 .card-body {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -16,4 +16,13 @@ body {
   width: 25vw;
   padding-left: 10vw;
   /* padding-right: 10vw; */
+}
+
+.center {
+  margin-left: 10vh;
+  margin-top:2vh;
+}
+
+.title {
+  text-align: center;
 }

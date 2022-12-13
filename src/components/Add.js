@@ -20,8 +20,10 @@ const Add = (props) => {
     return (
         <>
          <form onSubmit={handleSubmit}>
+         <div className="form-floating">
          <lable htmlFor="image">Cover Art:</lable>
             <input type="text" name="image" onChange={handleChange}/>
+            </div>
             <br/>
             <br/>
             <lable htmlFor="title">Title:</lable>
@@ -46,7 +48,7 @@ const Add = (props) => {
             <input type="text" name="release" onChange={handleChange}/>
             <br/>
             <br/>
-            <input type="submit"/>
+            <input className="w-25 btn btn-lg btn-primary" type="submit"/>
         </form>
         </>
     )

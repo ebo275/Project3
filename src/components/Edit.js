@@ -19,33 +19,37 @@ const Edit = (props) => {
         <details>
             <summary>Edit Anime</summary>
         <form onSubmit={handleSubmit}>
-        <label htmlFor="image">Image:</label>
+        <div className="form-floating w-50 p-form">
+        <label className="form-label" htmlFor="image">Image:</label>
             <input type="text" name="image" onChange={handleChange} value={anime.image}/>
+            </div>
             <br/>
             <br/>
-            <label htmlFor="name">Name:</label>
+            <div className="form-floating w-50 p-form">
+            <label className="form-label" htmlFor="name">Name:</label>
             <input type="text" name="name" onChange={handleChange} value={anime.name}/>
+            </div>
             <br/>
             <br/>
-            <label htmlFor="genre">Genere:</label>
+            <label className="form-label" htmlFor="genre">Genere:</label>
             <input type="text" name="genre" onChange={handleChange} value={anime.genre}/>
             <br/>
             <br/>
-            <label htmlFor="seasons">Seasons:</label>
+            <label  className="form-label" htmlFor="seasons">Seasons:</label>
             <input type="number" name="seasons" onChange={handleChange} value={anime.seasons}/>
             <br/>
             <br/>
-            <label htmlFor="episodes">Episodes:</label>
+            <label className="form-label" htmlFor="episodes">Episodes:</label>
             <input type="number" name="episodes" onChange={handleChange} value={anime.episodes}/>
             <br/>
             <br/>
-            <label htmlFor="studio">Studio:</label>
+            <label className="form-label" htmlFor="studio">Studio:</label>
             <input type="text" name="studio" onChange={handleChange} value={anime.studio}/>
             <br/>
             <br/>
-            <label htmlFor="releasedate">Release Date:</label>
+            <label className="form-label" htmlFor="releasedate">Release Date:</label>
             <input type= "text" name="release" onChange={handleChange} value={anime.release}/>
-            <input type="submit"/>
+            <input className="w-55 center btn btn-md btn-primary" type="submit" value="Save Changes"/>
         </form>
         </details>
         </div>
