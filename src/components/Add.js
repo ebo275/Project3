@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Add = () => {
+const Add = (props) => {
 
     const [anime, setAnime] = useState({image: "", title:"", genre: "", studio: "", seasons: 0, episodes: 0, releaseDate: ""})
 

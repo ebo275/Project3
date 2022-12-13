@@ -8,18 +8,18 @@ import Edit from './components/Edit.js'
 const App = ()=> {
 
 
-  const [anime, setAnimes] = useState([])
+  const [animes, setAnimes] = useState([])
   
   //READING 1
   const getAnimes = () => {
-    axios.get('http://localhost:3000/animes').then((response) => setAnimes(response.data), (err) => console.log(err)).catch((error)=> console.log(error))
+    axios.get('https://tobi-ella-project3.herokuapp.com/anime').then((response) => setAnimes(response.data), (err) => console.log(err)).catch((error)=> console.log(error))
 
   }
 
   //ADDING
   const handleCreate = (data) => {
 
-    axios.post('http://localhost:3000/animes', data).then((response) => {
+    axios.post('https://tobi-ella-project3.herokuapp.com/anime', data).then((response) => {
       console.log(response)
       setAnimes([...animes, response.data])
 
@@ -28,7 +28,7 @@ const App = ()=> {
 
   //EDITING
 const handleEdit = (data) => {
-  axios.put('http://localhost:3000/animes/', data._id, data).then((response) => {
+  axios.put('https://tobi-ella-project3.herokuapp.com/anime/', data._id, data).then((response) => {
     console.log(response)
     let newAnimes = animes.map((anime) => {
       return anime._id !== data._id ? anime : data
@@ -40,7 +40,7 @@ const handleEdit = (data) => {
 
   //DELETE
 const handleDelete = (deletedAnime) => {
-  axios.delete('http://localhost:3000/animes/' + deletedAnime._id).then((response) => {
+  axios.delete('https://tobi-ella-project3.herokuapp.com/anime/' + deletedAnime._id).then((response) => {
     let newAnimes = animes.filter((anime) => {
       return anime._id !== deletedAnime._id
     })
@@ -55,6 +55,7 @@ const handleDelete = (deletedAnime) => {
 
   return (
     <>
+    
     <h1>Anime Wonderland</h1>
     <Add handleCreate={handleCreate}/>
     {animes.map((anime) => {
@@ -63,9 +64,11 @@ const handleDelete = (deletedAnime) => {
             <Anime anime={anime}/>
             <button onClick={() => {handleDelete(anime)}} value={anime._id}>Delete</button>
             <Edit anime={anime} handleEdit={handleEdit}/>
+            
 
           </>
         )})}
+
     </>
   );
 }
