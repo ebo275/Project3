@@ -19,37 +19,65 @@ const Add = (props) => {
     
     return (
         <>
+        <details>
+            <summary>
+                <button className="w-15 btn btn-lg btn-primary">Add New Anime</button>  
+                </summary>
          <form onSubmit={handleSubmit}>
-         <div className="form-floating">
-         <lable htmlFor="image">Cover Art:</lable>
-            <input type="text" name="image" onChange={handleChange}/>
+            <div className="w-25 form-floating mb-3">
+             <input placeholder="Image URL" class="form-control" id="floatingInput" type="text" name="image" onChange={handleChange}  />
+            <label htmlFor="image">Cover Art:</label>
             </div>
             <br/>
+            
+
+            <div className="w-25 form-floating mb-3">
+            <input placeholder="Title" class="form-control" id="floatingTitle" type="text" name="name" onChange={handleChange}/>
+            <label htmlFor="title">Title:</label>
+            
+            </div>
             <br/>
-            <lable htmlFor="title">Title:</lable>
-            <input type="text" name="name" onChange={handleChange}/>
+            
+            <div className="w-25 form-floating mb-3">
+            <input placeholder="Genre" class="form-control" id="floatingGenre" type="text" name="genre" onChange={handleChange}/>
+            <label htmlFor="genre">Genre:</label>
+            
+            </div>
             <br/>
+
+            <div className="w-25 form-floating mb-3">
+            <input placeholder="Studio" class="form-control" id="floatingStudio" type="text" name="studio" onChange={handleChange}/>
+            <label htmlFor="studio">Studio:</label>
+            </div>
             <br/>
-            <lable htmlFor="genre">Genre:</lable>
-            <input type="text" name="genre" onChange={handleChange}/>
+            
+            <div className="w-25 form-floating mb-3">
+            <input placeholder="Seasons" class="form-control" id="floatingSeasons"  type= "number" name="seasons" onChange={handleChange}/>
+            <label htmlFor="seasons">Number of Seasons:
+            </label>
+            
+            </div>
+
             <br/>
+
+            <div className="w-25 form-floating mb-3">
+            <input placeholder="Episodes" class="form-control" id="floatingEpisodes"type="number" name="episodes" onChange={handleChange}/>
+            <label htmlFor="episodes">Number of Episodes:</label>
+            
+            </div>
+            
             <br/>
-            <lable htmlFor="studio">Studio:</lable>
-            <input type="text" name="studio" onChange={handleChange}/>
-            <br/>
-            <br/>
-            <lable htmlFor="seasons">Number of Seasons:</lable>
-            <input type= "number" name="seasons" onChange={handleChange}/>
-            <lable htmlFor="episodes">Number of Episodes:</lable>
-            <input type="number" name="episodes" onChange={handleChange}/>
-            <br/>
-            <br/>
-            <lable htmlFor="releaseDate">Release Date:</lable>
-            <input type="text" name="release" onChange={handleChange}/>
-            <br/>
+            <div className="w-25 form-floating mb-3">
+            <input placeholder="Release Date" class="form-control" id="floatingDate" type="text" name="release" onChange={handleChange}/>
+            <label htmlFor="releaseDate">Release Date:</label>
+            
+            </div>
+            
             <br/>
             <input className="w-25 btn btn-lg btn-primary" type="submit"/>
+
         </form>
+        </details>
         </>
     )
 

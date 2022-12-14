@@ -60,17 +60,20 @@ const handleDelete = (deletedAnime) => {
     
     <Add handleCreate={handleCreate}/>
     </div>
+    <main className="d-flex flex-wrap flex-row mx-5 justify-content-around">
     {animes.map((anime) => {
         return (
           <>
-          <div className="card my-3 mx-2 d-flex flex-column justify-content-center align-items-center">
+          <div className="card my-3 mx-2 d-flex flex-column justify-content-center align-items-center" id='productCard'>
             <Anime anime={anime}/>
-            <button className="w-30 btn btn-md btn-primary" onClick={() => {handleDelete(anime)}} value={anime._id}>Delete</button>
             <Edit anime={anime} handleEdit={handleEdit}/>
+            <button className="w-30 btn btn-md btn-primary" onClick={() => {handleDelete(anime)}} value={anime._id}>Delete</button>
+            
             </div>
 
           </>
         )})}
+        </main>
 
     </>
   );

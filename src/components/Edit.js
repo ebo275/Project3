@@ -17,38 +17,58 @@ const Edit = (props) => {
         <>
         <div className="mb-3">
         <details>
-            <summary>Edit Anime</summary>
+            <summary>
+                <button className="w-15 btn btn-lg btn-primary">Edit</button></summary>
         <form onSubmit={handleSubmit}>
-        <div className="form-floating w-50 p-form">
-        <label className="form-label" htmlFor="image">Image:</label>
-            <input type="text" name="image" onChange={handleChange} value={anime.image}/>
-            </div>
+
+        <div className="w-100 form-floating mb-3">
+            <input className="form-control" id="floatingInput" type="text" name="image" onChange={handleChange} value={anime.image}/>
+            <label className="form-label" htmlFor="image">Image:</label>
+         </div>
+
+            
             <br/>
-            <br/>
-            <div className="form-floating w-50 p-form">
+
+            <div className="w-100 form-floating mb-3">
+            <input className="form-control" id="floatingTitle" type="text" name="name" onChange={handleChange} value={anime.name}/>
             <label className="form-label" htmlFor="name">Name:</label>
-            <input type="text" name="name" onChange={handleChange} value={anime.name}/>
             </div>
+
+            
             <br/>
-            <br/>
+
+            <div className="w-100 form-floating mb-3">
+            <input className="form-control" id="floatingGenre" type="text" name="genre" onChange={handleChange} value={anime.genre}/>
             <label className="form-label" htmlFor="genre">Genere:</label>
-            <input type="text" name="genre" onChange={handleChange} value={anime.genre}/>
+            </div>
+            
             <br/>
-            <br/>
+
+            <div className="w-100 form-floating mb-3">
+            <input className="form-control" id="floatingSeasons" type="number" name="seasons" onChange={handleChange} value={anime.seasons}/>
             <label  className="form-label" htmlFor="seasons">Seasons:</label>
-            <input type="number" name="seasons" onChange={handleChange} value={anime.seasons}/>
+            </div>
+            
             <br/>
-            <br/>
+            <div className="w-100 form-floating mb-3"> 
+            <input class="form-control" id="floatingEpisodes" type="number" name="episodes" onChange={handleChange} value={anime.episodes}/>
             <label className="form-label" htmlFor="episodes">Episodes:</label>
-            <input type="number" name="episodes" onChange={handleChange} value={anime.episodes}/>
+            </div>
+            
             <br/>
-            <br/>
+            
+            <div className="w-100 form-floating mb-3"> 
+
+            <input class="form-control" id="floatingStudio" type="text" name="studio" onChange={handleChange} value={anime.studio}/>
             <label className="form-label" htmlFor="studio">Studio:</label>
-            <input type="text" name="studio" onChange={handleChange} value={anime.studio}/>
+            </div>
+            
             <br/>
-            <br/>
+
+            <div className="w-100 form-floating mb-3">
+            <input class="form-control" id="floatingDate" type= "text" name="release" onChange={handleChange} value={anime.release}/>
             <label className="form-label" htmlFor="releasedate">Release Date:</label>
-            <input type= "text" name="release" onChange={handleChange} value={anime.release}/>
+            </div>
             <input className="w-55 center btn btn-md btn-primary" type="submit" value="Save Changes"/>
         </form>
         </details>

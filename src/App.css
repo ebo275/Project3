@@ -26,3 +26,8 @@ body {
 .title {
   text-align: center;
 }
+
+#productCard {
+  display: flex;
+  flex-wrap: wrap;
+}
